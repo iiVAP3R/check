@@ -1,7 +1,3 @@
 check50:
-  files: &check50_files
-    - !exclude "*"
-    - !require mario.c
-
-submit50:
-  files: *check50_files
+  files: 
+    !include "syntax-errors.py"
