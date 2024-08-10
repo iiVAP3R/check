@@ -6,7 +6,6 @@ import re
 def fileExists():
     """ Check if the file even exists """
     check50.exists("rectangle.py")
-    check50.include("2w5h.txt", "3w3h.txt")
 
 
 @check50.check(fileExists)
