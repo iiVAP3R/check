@@ -10,6 +10,7 @@ def fileExists():
 
 @check50.check(fileExists)
 def test0():
+    """ Checking if W = 5, H = 5, Output = 25 """
     program_output = check50.run("python3 rectangle.py").stdin("5").stdin("5").stdout()
     program_output = re.search(r"(\d+)", program_output)
     if not program_output:
@@ -25,6 +26,7 @@ def test0():
 
 @check50.check(fileExists)
 def test1():
+    """ Checking if W = 6, H = 9, Output = 54 """
     program_output = check50.run("python rectangle.py").stdin("6").stdin("9").stdout()
     program_output = re.search(r"(\d+)", program_output)
     if not program_output:
