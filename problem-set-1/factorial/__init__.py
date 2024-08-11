@@ -43,13 +43,13 @@ def test0():
 @check50.check(fileExists)
 def test1():
     """ check 1! (expected 1) """
-    check50.run("python3 factorial.py").stdin("1").stdout(program_output(120), "1\n").exit()
+    check50.run("python3 factorial.py").stdin("1").stdout(program_output(1), "1\n").exit()
 
 
 @check50.check(fileExists)
 def test2():
     """ check 7! (expected 5040) """
-    check50.run("python3 factorial.py").stdin("7").stdout(program_output(120), "1\n").exit()
+    check50.run("python3 factorial.py").stdin("7").stdout(program_output(5040), "5040\n").exit()
 
 
 def program_output(num):
