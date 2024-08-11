@@ -18,7 +18,7 @@ def checkForRecursion():
 
 @check50.check(fileExists)
 def check_for_exit_none():
-    """ check if program handles no user input correctly """
+    """ check if program quit after no user input """
     check50.run("python3 factorial.py").stdin("").exit()
 
 
