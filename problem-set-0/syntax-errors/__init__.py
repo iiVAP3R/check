@@ -33,7 +33,7 @@ def test1():
     expected_output = 8.38
 
     if program_output != expected_output:
-        raise check50.Mismatch(expected_output, program_output)
+        raise check50.Mismatch(str(expected_output), str(program_output))
     
 
 @check50.check(fileExists)
@@ -48,4 +48,4 @@ def test2():
     expected_output = 335.1
 
     if program_output != expected_output:
-        raise check50.Mismatch(expected_output, program_output)
+        raise check50.Mismatch(str(expected_output), str(program_output))

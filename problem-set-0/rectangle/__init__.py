@@ -21,7 +21,7 @@ def test0():
     
     if program_output != expected_output:
         help = "W = 5, H = 5, expected 25"
-        raise check50.Mismatch(expected_output, program_output, help=help)
+        raise check50.Mismatch(str(expected_output), str(program_output), help=help)
 
 
 @check50.check(fileExists)
@@ -36,4 +36,4 @@ def test1():
     expected_output = 54
     if program_output != expected_output:
         help = "W = 6, H = 9, expected 54"
-        raise check50.Mismatch(expected_output, program_output, help=help)
+        raise check50.Mismatch(str(expected_output), str(program_output), help=help)
