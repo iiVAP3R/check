@@ -14,7 +14,7 @@ def test0():
     if not program_output:
         raise check50.Failure("Output does not contain a numeric value")
     
-    program_output = int(program_output.group(1))
+    program_output = float(program_output.group(1))
     expected_output = 508.94
 
     if program_output != expected_output:
@@ -29,7 +29,7 @@ def test1():
     if not program_output:
         raise check50.Failure("Output does not contain a numeric value")
     
-    program_output = int(program_output.group(1))
+    program_output = float(program_output.group(1))
     expected_output = 8.38
 
     if program_output != expected_output:
@@ -44,7 +44,7 @@ def test2():
     if not program_output:
         raise check50.Failure("Output does not contain a numeric value")
     
-    program_output = int(program_output.group(1))
+    program_output = float(program_output.group(1))
     expected_output = 1675.52
 
     if program_output != expected_output:
