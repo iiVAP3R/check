@@ -5,6 +5,7 @@ import check50
 def fileExists():
     """ check file exist """
     check50.exists("triangle.py")
+    check50.include("1.txt", "6.txt", "9.txt", "12.txt")
 
 
 @check50.check(fileExists)
