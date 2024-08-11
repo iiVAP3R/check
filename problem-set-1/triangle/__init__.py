@@ -59,37 +59,18 @@ def check_input_12():
 
 
 
-def check_output(expected_output, program_output):
-    # split expected and actual outputs into lines (into a list)
-    expected_lines = expected_output.splitlines()
-    output_lines = program_output.splitlines()
+def check_output(program_output, expected_output):
+    if program_output == expected_output:
+        return
 
+    output = [line for line in program_output.splitlines() if line != ""]
+    correct = expected_output.splitlines()
 
-    # remove any empty lines from the actual output
-    cleaned_output_lines = []
-    for line in output_lines:
-        if line != "":
-            cleaned_output_lines.append(line)
+    help = None
+    if len(output) == len(correct):
+        if all(ol.rstrip() == cl for ol, cl in zip(output, correct)):
+            help = "Did you add too much trailing whitespace to the end of your pyramid?"
+        elif all(ol[1:] == cl for ol, cl in zip(output, correct)):
+            help = "Are you printing an additional character at the beginning of each line?"
 
-
-    # check if num of lines match for expected and input
-    if len(cleaned_output_lines) != len(expected_lines):
-        raise check50.Mismatch(expected_lines, cleaned_output_lines, help="The number of lines in the output does not match the expected output.")
-
-    # compare each line of expected to input
-    for expected_line, output_line in zip(expected_lines, cleaned_output_lines):
-        if expected_line != output_line:
-            # check for trailing whitespace issues
-            if expected_line.rstrip() == output_line.rstrip():
-                help = "Did you add too much trailing whitespace to the end of your triangle?"
-            # check for additional characters at the beginning of each line
-            elif expected_line == output_line[1:]:
-                help = "Are you printing an additional character at the beginning of each line?"
-            else:
-                help = "The output does not match the expected format."
-
-            raise check50.Mismatch(expected_lines, cleaned_output_lines, help=help)
-
-
-    # if match, return correct
-    return
+    raise check50.Mismatch(expected_output, program_output, help=help)
