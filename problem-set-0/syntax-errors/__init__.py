@@ -12,7 +12,8 @@ def test0():
     program_output = check50.run("python syntax-errors.py").stdin("6").stdin("9").stdout()
     program_output = re.search(r"(\d+\.\d+)", program_output)
     if not program_output:
-        raise check50.Failure("The output either lacks a numeric value OR does not include an integer followed by two decimal places.")
+        help = f"Program number output: { program_output }"
+        raise check50.Failure("The output either lacks a numeric value OR does not include an integer followed by two decimal places.", help=help)
     
     program_output = float(program_output.group(1))
     expected_output = 508.94
@@ -27,7 +28,8 @@ def test1():
     program_output = check50.run("python syntax-errors.py").stdin("2").stdin("2").stdout()
     program_output = re.search(r"(\d+\.\d+)", program_output)
     if not program_output:
-        raise check50.Failure("The output either lacks a numeric value OR does not include an integer followed by two decimal places.")
+        help = f"Program number output: { program_output }"
+        raise check50.Failure("The output either lacks a numeric value OR does not include an integer followed by two decimal places.", help=help)
     
     program_output = float(program_output.group(1))
     expected_output = 8.38
@@ -42,7 +44,8 @@ def test2():
     program_output = check50.run("python syntax-errors.py").stdin("4").stdin("20").stdout()
     program_output = re.search(r"(\d+\.\d+)", program_output)
     if not program_output:
-        raise check50.Failure("The output either lacks a numeric value OR does not include an integer followed by two decimal places.")
+        help = f"Program number output: { program_output }"
+        raise check50.Failure("The output either lacks a numeric value OR does not include an integer followed by two decimal places.", help=help)
     
     program_output = float(program_output.group(1))
     expected_output = 1675.52
