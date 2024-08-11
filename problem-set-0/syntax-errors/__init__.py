@@ -45,7 +45,7 @@ def test2():
         raise check50.Failure("Output does not contain a numeric value")
     
     program_output = int(program_output.group(1))
-    expected_output = 335.1
+    expected_output = 1675.52
 
     if program_output != expected_output:
         raise check50.Mismatch(str(expected_output), str(program_output))
